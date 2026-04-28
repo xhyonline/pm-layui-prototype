@@ -8,7 +8,7 @@ export const statCards = [
 export const quickLinks = [
   { title: "新增用户", desc: "创建后台账号" },
   { title: "角色分配", desc: "调整权限范围" },
-  { title: "菜单配置", desc: "维护导航结构" },
+  { title: "内容发布", desc: "编辑图文内容" },
   { title: "导出报表", desc: "下载运营数据" }
 ];
 

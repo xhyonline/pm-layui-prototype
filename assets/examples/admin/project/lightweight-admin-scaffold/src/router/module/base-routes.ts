@@ -18,7 +18,10 @@ export const menuGroups: MenuGroup[] = [
   {
     id: "system",
     title: "系统管理",
-    children: [{ path: "/system/user", title: "用户管理" }]
+    children: [
+      { path: "/system/user", title: "用户管理" },
+      { path: "/system/content-editor", title: "内容发布" }
+    ]
   }
 ];
 
@@ -53,6 +56,18 @@ export const baseRoutes: RouteRecordRaw[] = [
           title: "用户管理",
           group: "系统管理",
           menuKey: "/system/user",
+          openKey: "system",
+          requireAuth: true
+        }
+      },
+      {
+        path: "system/content-editor",
+        name: "SystemContentEditor",
+        component: () => import("../../views/system/content-editor/index.vue"),
+        meta: {
+          title: "内容发布",
+          group: "系统管理",
+          menuKey: "/system/content-editor",
           openKey: "system",
           requireAuth: true
         }

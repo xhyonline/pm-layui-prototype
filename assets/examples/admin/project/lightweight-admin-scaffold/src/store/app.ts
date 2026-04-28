@@ -24,7 +24,8 @@ export const useAppStore = defineStore("app", {
     } as Record<string, string>,
     quickTabs: [
       { title: "工作台", path: "/workspace/workbench", closable: false },
-      { title: "用户管理", path: "/system/user", closable: true }
+      { title: "用户管理", path: "/system/user", closable: true },
+      { title: "内容发布", path: "/system/content-editor", closable: true }
     ]
   }),
   persist: {
