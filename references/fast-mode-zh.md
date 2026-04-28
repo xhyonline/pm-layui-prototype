@@ -18,8 +18,9 @@
 1. 当前文件
 2. `references/full-project-generation-zh.md`，仅当目标是完整工程
 3. `references/layui-vue-admin-source-map.md`
-4. `assets/examples/admin/project/minimal-admin-skeleton.md`，仅当目标是完整工程
-5. 1 个最贴近的页面示例
+4. `assets/examples/admin/project/lightweight-admin-scaffold/README.md`，仅当目标是完整工程
+5. `assets/examples/admin/project/minimal-admin-skeleton.md`，仅当目标是完整工程
+6. 1 个最贴近的页面示例
 
 不要在首轮同时展开：
 
@@ -42,8 +43,10 @@
 完整工程模式下，优先按这个顺序：
 
 1. 看 `full-project-generation-zh.md`
-2. 看 `minimal-admin-skeleton.md`
-3. 按骨架先生成：
+2. 优先看 `lightweight-admin-scaffold/README.md`
+3. 再看 `minimal-admin-skeleton.md`
+4. 如果允许直接复用本地骨架，先复制 `lightweight-admin-scaffold/`
+5. 如果不能直接复用目录，再按骨架先生成：
    - `package.json`
    - `vite.config.ts`
    - `tsconfig.json`
@@ -56,8 +59,8 @@
    - `src/views/`
    - `src/store/`
    - `src/styles/`
-4. 先让 layout、router 和首页达到可运行状态
-5. 再填入业务页面
+6. 先让 layout、router 和首页达到可运行状态
+7. 再填入业务页面
 
 ## 进度反馈
 

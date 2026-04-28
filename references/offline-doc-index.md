@@ -41,6 +41,7 @@ If the user wants a full project, these examples only define page patterns, not 
 
 For fast full-project generation, prefer:
 
+- `assets/examples/admin/project/lightweight-admin-scaffold/README.md`
 - `assets/examples/admin/project/minimal-admin-skeleton.md`
 
 | Page intent | Example file | Use for |
@@ -132,7 +133,7 @@ These guides are the most relevant non-component docs.
 Use this narrowing rule:
 
 - If they ask for a whole admin page, start from the matching admin example.
-- If they ask for a full admin project and care about speed, start from `fast-mode.md` and `minimal-admin-skeleton.md`.
+- If they ask for a full admin project and care about speed, prefer `fast-mode.md` and `lightweight-admin-scaffold/README.md`, then read `minimal-admin-skeleton.md` only if needed.
 - If they ask for one module inside a page, start from the matching component family.
 - If they ask for exact prop, event, slot, or syntax behavior, go straight to the normalized component doc.
 - If the normalized doc seems transformed or incomplete, verify against the raw upstream doc.

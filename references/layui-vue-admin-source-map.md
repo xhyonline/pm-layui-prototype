@@ -7,7 +7,7 @@ Use this file to decide which local example source to read before writing a PM p
 - `assets/examples/admin/` is enough for page structure and visual pattern reference.
 - `assets/examples/admin/` is not enough by itself to define a runnable full project.
 - For runnable demo or `pnpm dev` requests, read [full-project-generation.md](full-project-generation.md) first and treat these examples as page-level supplements.
-- For speed-sensitive runnable demo requests, read [fast-mode.md](fast-mode.md) and `assets/examples/admin/project/minimal-admin-skeleton.md` first.
+- For speed-sensitive runnable demo requests, read [fast-mode.md](fast-mode.md) and prefer `assets/examples/admin/project/lightweight-admin-scaffold/` first.
 
 ## Local example root
 
@@ -52,6 +52,15 @@ Use this file to decide which local example source to read before writing a PM p
   - required `src` directories
   - minimum route and layout structure
 
+### Copyable lightweight scaffold
+
+- `project/lightweight-admin-scaffold/`
+- Use for:
+  - the fastest copyable runnable admin prototype
+  - default color, spacing, and shell layout aligned to `layui-vue-admin-master`
+  - a ready-to-run `BasicLayout` plus one dashboard and one CRUD page
+  - speed-sensitive `pnpm dev` requests where re-deriving the shell would waste time
+
 ### Dashboard
 
 - `pages/dashboard-workbench.vue`
@@ -92,7 +101,7 @@ Use this file to decide which local example source to read before writing a PM p
 - If the user asks for create or edit pages, read `base-form-page.vue` first.
 - If the user asks for overall backend IA or shell layout, read `basic-layout-shell.vue` and `admin-route-map.ts` first.
 - If the user asks for a runnable project, full backend system, or `pnpm dev`, read `full-project-generation.md` first, then use the page examples to fill in views.
-- If the user asks for a runnable project and also wants speed, read `fast-mode.md`, then `project/minimal-admin-skeleton.md`, then only one matching page example.
+- If the user asks for a runnable project and also wants speed, read `fast-mode.md`, then prefer `project/lightweight-admin-scaffold/`, then only one matching page example.
 
 ## Relationship to vendor source
 

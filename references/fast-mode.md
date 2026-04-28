@@ -18,8 +18,9 @@ In fast mode, read at most:
 1. this file
 2. `references/full-project-generation.md`, only if the target is a full project
 3. `references/layui-vue-admin-source-map.md`
-4. `assets/examples/admin/project/minimal-admin-skeleton.md`, only if the target is a full project
-5. one closest page example
+4. `assets/examples/admin/project/lightweight-admin-scaffold/README.md`, only if the target is a full project
+5. `assets/examples/admin/project/minimal-admin-skeleton.md`, only if the target is a full project
+6. one closest page example
 
 Do not expand in the first pass to:
 
@@ -42,8 +43,10 @@ Do not expand in the first pass to:
 For full-project requests, prefer this order:
 
 1. read `full-project-generation.md`
-2. read `minimal-admin-skeleton.md`
-3. scaffold first:
+2. prefer `lightweight-admin-scaffold/README.md`
+3. then read `minimal-admin-skeleton.md`
+4. if local scaffold reuse is allowed, copy `lightweight-admin-scaffold/` first
+5. otherwise scaffold first:
    - `package.json`
    - `vite.config.ts`
    - `tsconfig.json`
@@ -56,8 +59,8 @@ For full-project requests, prefer this order:
    - `src/views/`
    - `src/store/`
    - `src/styles/`
-4. make layout, router, and one home page runnable
-5. then fill business pages
+6. make layout, router, and one home page runnable
+7. then fill business pages
 
 ## Progress feedback
 

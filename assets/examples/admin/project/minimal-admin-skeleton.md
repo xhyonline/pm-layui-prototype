@@ -1,6 +1,10 @@
 # Minimal Admin Skeleton
 
-Use this file as the fastest reference for generating a runnable admin project.
+Use this file as the fastest text reference for generating a runnable admin project.
+
+If you need a copyable starter instead of a text-only structure, prefer:
+
+- `assets/examples/admin/project/lightweight-admin-scaffold/`
 
 ## Goal
 
@@ -104,3 +108,12 @@ Recommended for closer admin behavior:
 ## Fast-generation rule
 
 If the user asks for a runnable admin project, generate this skeleton first and then add business pages.
+
+## Preferred shortcut
+
+When speed matters and local file reuse is allowed, copy `lightweight-admin-scaffold/` first, then only replace:
+
+- route groups
+- page titles
+- mock data
+- representative business pages

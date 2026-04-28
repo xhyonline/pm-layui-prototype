@@ -41,6 +41,7 @@
 
 完整工程且追求速度时，优先使用：
 
+- `assets/examples/admin/project/lightweight-admin-scaffold/README.md`
 - `assets/examples/admin/project/minimal-admin-skeleton.md`
 
 | 页面意图 | 示例文件 | 适用场景 |
@@ -132,7 +133,7 @@
 用这套收敛规则：
 
 - 如果用户要的是完整后台页面，先读最匹配的后台示例。
-- 如果用户要的是完整后台工程且强调速度，先读 `fast-mode-zh.md` 和 `minimal-admin-skeleton.md`。
+- 如果用户要的是完整后台工程且强调速度，优先读 `fast-mode-zh.md` 和 `lightweight-admin-scaffold/README.md`，再决定是否补读 `minimal-admin-skeleton.md`。
 - 如果用户要的是页面中的一个模块，先读对应组件族。
 - 如果用户问的是精确的 props、events、slots 或语法行为，直接打开标准化组件文档。
 - 如果标准化文档疑似在转换过程中丢了信息，再去上游原始文档核对。
