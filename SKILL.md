@@ -25,6 +25,7 @@ Prefer:
 - route and menu suggestions
 - `Vue SFC` prototype code when code is requested
 - frontend mock data for demos and review
+- runnable handoff notes when code is requested
 
 ## Workflow
 
@@ -62,6 +63,10 @@ Prefer:
    - use local mock arrays, objects, and status fields
    - do not depend on backend interfaces before the page can be rendered
    - make the prototype reviewable even if no server exists yet
+12. After delivering prototype code, also tell the user how to run it:
+   - if the user already has a `layui-vue-admin` or `Vue` repo, say which file to add or replace, how to register the route or menu entry, and which existing dev command to run
+   - if no runnable repo is provided, give the lightest `Vue 3 + Vite + @layui/layui-vue` preview path, including dependency install, `main.ts` registration, where to place the page, and how to start local preview
+   - if the only context is this skill repository, explicitly say that this repository is a skill and reference pack, not a runnable prototype project by itself
 
 ## Admin-specific defaults
 
@@ -135,6 +140,7 @@ Choose the lightest useful output:
 - frontend mock data draft
 - `Vue` prototype page
 - PRD-to-prototype conversion notes
+- run or preview instructions when code is included
 
 If the user is vague, default to:
 
@@ -144,3 +150,4 @@ If the user is vague, default to:
 4. main interactions
 5. route or menu placement
 6. prototype code
+7. run instructions
