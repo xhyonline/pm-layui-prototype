@@ -7,6 +7,7 @@ Use this file to decide which local example source to read before writing a PM p
 - `assets/examples/admin/` is enough for page structure and visual pattern reference.
 - `assets/examples/admin/` is not enough by itself to define a runnable full project.
 - For runnable demo or `pnpm dev` requests, read [full-project-generation.md](full-project-generation.md) first and treat these examples as page-level supplements.
+- For speed-sensitive runnable demo requests, read [fast-mode.md](fast-mode.md) and `assets/examples/admin/project/minimal-admin-skeleton.md` first.
 
 ## Local example root
 
@@ -41,6 +42,15 @@ Use this file to decide which local example source to read before writing a PM p
   - required `src/layouts`, `src/router`, `src/views`, `src/store`, `src/styles`
   - `BasicLayout` plus nested child routes
   - `pnpm install` / `pnpm dev` handoff expectations
+
+### Minimal project skeleton
+
+- `project/minimal-admin-skeleton.md`
+- Use for:
+  - the fastest runnable project tree
+  - required root files
+  - required `src` directories
+  - minimum route and layout structure
 
 ### Dashboard
 
@@ -82,6 +92,7 @@ Use this file to decide which local example source to read before writing a PM p
 - If the user asks for create or edit pages, read `base-form-page.vue` first.
 - If the user asks for overall backend IA or shell layout, read `basic-layout-shell.vue` and `admin-route-map.ts` first.
 - If the user asks for a runnable project, full backend system, or `pnpm dev`, read `full-project-generation.md` first, then use the page examples to fill in views.
+- If the user asks for a runnable project and also wants speed, read `fast-mode.md`, then `project/minimal-admin-skeleton.md`, then only one matching page example.
 
 ## Relationship to vendor source
 

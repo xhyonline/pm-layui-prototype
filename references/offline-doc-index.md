@@ -13,12 +13,13 @@ Use this file as the single entry point for local `layui-vue` and `layui-vue-adm
 When starting a prototype task, use this order:
 
 1. Read this file to choose the right example and component family.
-2. If the user wants a full project, runnable demo, or `pnpm dev`, read [full-project-generation.md](full-project-generation.md) first.
-3. Read [layui-vue-admin-source-map.md](layui-vue-admin-source-map.md) if the task is a backend/admin page.
-4. Read [layui-vue-admin-patterns.md](layui-vue-admin-patterns.md) for shell and page composition rules.
-5. Read [layui-vue-components.md](layui-vue-components.md) for component-family guidance.
-6. Open the exact normalized component docs in `docs/layui-vue/2.23.3/plain/components/`.
-7. Only if syntax still seems ambiguous, open the raw upstream docs in `assets/vendor/layui-vue/upstream/layui-vue-2.23.3/docs/src/document/zh-CN/components/`.
+2. If the user wants faster output, direct generation, or code-first behavior, read [fast-mode.md](fast-mode.md) first.
+3. If the user wants a full project, runnable demo, or `pnpm dev`, read [full-project-generation.md](full-project-generation.md) first.
+4. Read [layui-vue-admin-source-map.md](layui-vue-admin-source-map.md) if the task is a backend/admin page.
+5. Read [layui-vue-admin-patterns.md](layui-vue-admin-patterns.md) for shell and page composition rules.
+6. Read [layui-vue-components.md](layui-vue-components.md) for component-family guidance.
+7. Open the exact normalized component docs in `docs/layui-vue/2.23.3/plain/components/`.
+8. Only if syntax still seems ambiguous, open the raw upstream docs in `assets/vendor/layui-vue/upstream/layui-vue-2.23.3/docs/src/document/zh-CN/components/`.
 
 ## Path rules
 
@@ -37,6 +38,10 @@ For any guide named `xyz`:
 Use these local examples before reading larger source trees.
 
 If the user wants a full project, these examples only define page patterns, not the final project scaffold.
+
+For fast full-project generation, prefer:
+
+- `assets/examples/admin/project/minimal-admin-skeleton.md`
 
 | Page intent | Example file | Use for |
 | --- | --- | --- |
@@ -127,6 +132,7 @@ These guides are the most relevant non-component docs.
 Use this narrowing rule:
 
 - If they ask for a whole admin page, start from the matching admin example.
+- If they ask for a full admin project and care about speed, start from `fast-mode.md` and `minimal-admin-skeleton.md`.
 - If they ask for one module inside a page, start from the matching component family.
 - If they ask for exact prop, event, slot, or syntax behavior, go straight to the normalized component doc.
 - If the normalized doc seems transformed or incomplete, verify against the raw upstream doc.

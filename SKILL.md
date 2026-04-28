@@ -40,11 +40,12 @@ Prefer:
 3. Read [references/version-matrix.md](references/version-matrix.md).
 4. Read [references/offline-doc-index.md](references/offline-doc-index.md).
 5. Read [docs/layui-vue/2.23.3/plain/README.md](docs/layui-vue/2.23.3/plain/README.md).
-6. If the user asks for a full project, runnable demo, or explicitly mentions `pnpm dev`, read [references/full-project-generation.md](references/full-project-generation.md) first.
-7. If the task is for an admin backend, read these before writing code:
+6. If the user asks for a faster draft, direct generation, less explanation, or clear execution-first behavior, read [references/fast-mode.md](references/fast-mode.md) first.
+7. If the user asks for a full project, runnable demo, or explicitly mentions `pnpm dev`, read [references/full-project-generation.md](references/full-project-generation.md) first.
+8. If the task is for an admin backend, read these before writing code:
    - [references/layui-vue-admin-patterns.md](references/layui-vue-admin-patterns.md)
    - [references/layui-vue-admin-source-map.md](references/layui-vue-admin-source-map.md)
-8. Read only the examples and docs needed for the page type:
+9. Read only the examples and docs needed for the page type:
    - curated admin examples under `assets/examples/admin/`
    - normalized component docs under `docs/layui-vue/2.23.3/plain/components/*.md`
    - normalized guide docs under `docs/layui-vue/2.23.3/plain/guide/*.md`
@@ -54,22 +55,38 @@ Prefer:
    - component summary: [references/layui-vue-components.md](references/layui-vue-components.md)
    - doc syntax notes: [references/layui-vue-doc-syntax.md](references/layui-vue-doc-syntax.md)
    - output format: [references/prototype-output-spec.md](references/prototype-output-spec.md)
-9. Map each visible block to an allowed `layui-vue` component or a simple native HTML structure.
-10. If the requested pattern does not exist in the allowed stack, say so and propose the nearest `Layui`-compatible fallback.
-11. Keep the implementation prototype-friendly:
+10. Map each visible block to an allowed `layui-vue` component or a simple native HTML structure.
+11. If the requested pattern does not exist in the allowed stack, say so and propose the nearest `Layui`-compatible fallback.
+12. Keep the implementation prototype-friendly:
    - simple
    - readable
    - easy for PM review
    - close to `layui-vue-admin` structure
-12. When drawing a prototype, create the display data directly in the frontend:
+13. When drawing a prototype, create the display data directly in the frontend:
    - use local mock arrays, objects, and status fields
    - do not depend on backend interfaces before the page can be rendered
    - make the prototype reviewable even if no server exists yet
-13. After delivering code, also tell the user how to run it:
+14. After delivering code, also tell the user how to run it:
    - if the user already has a `layui-vue-admin` or `Vue` repo, say which file to add or replace, how to register the route or menu entry, and which existing dev command to run
    - if the user asks for a full project or runnable demo, default to a full admin project handoff with at least `pnpm install` and `pnpm dev`
    - fall back to the lightest `Vue 3 + Vite + @layui/layui-vue` preview path only when the user explicitly wants a single-page preview instead of a full project
    - if the only context is this skill repository, explicitly say that this repository is a skill and reference pack, not a runnable prototype project by itself
+
+## Progress feedback rules
+
+Do not stay silent during long prototype work.
+
+- before substantial reading or generation, send a short update that states the current step
+- during long-running work, send progress feedback at least once every 20 to 30 seconds
+- if the task is a full project, report at these milestones:
+  - reference reading completed
+  - scaffold files created
+  - layout, router, and store completed
+  - first representative business page completed
+  - remaining pages completed
+  - install or build verification running
+- if a step is likely to take more than one minute, warn the user before starting it
+- if the user asks to evaluate skill efficiency, keep a step-by-step time log and report which stage consumed the most time
 
 ## Full-project mode
 
@@ -90,6 +107,35 @@ In full-project mode:
 - keep demo data local in the frontend, optionally via local mock files or `mockjs`
 - do not omit menu, breadcrumb, tab bar, and global content shell pieces unless the user explicitly wants an ultra-minimal app
 - do not collapse the output into a bare `App.vue + router + views` demo
+- accelerate generation with this order:
+  - scaffold the minimum runnable project first
+  - create layout, router, store, and shared mock data second
+  - implement one representative business page third
+  - then duplicate and adapt the pattern for the remaining pages
+- avoid writing the whole project in one monolithic pass when smaller milestones will reach runnable state faster
+- defer optional polish such as extra docs, optional dependencies, and non-critical refinements until after the project can already run
+
+## Fast mode
+
+Enter “fast mode” when the user indicates any of:
+
+- generate directly
+- faster output
+- less explanation
+- code first
+- give me a runnable draft first
+
+In fast mode:
+
+- read only `references/fast-mode.md` in the first pass
+- if the target is a full project, then read `references/full-project-generation.md`
+- then read only one closest page example instead of scanning several
+- do not read the full `docs/layui-vue/2.23.3/plain/components/` set on the first pass
+- do not read `assets/vendor/` raw material on the first pass
+- open a single component doc only when a specific prop, event, or slot is uncertain
+- if a minimal scaffold reference already exists, generate from it instead of re-deriving the project structure
+- stop after the minimum confident reference set is found and start coding immediately
+- prefer one representative page plus reusable shared patterns over implementing every module from scratch
 
 ## Admin-specific defaults
 
@@ -111,8 +157,10 @@ If the user only asks for a business page, still keep its inner layout compatibl
 Read the lightest matching example first:
 
 - full project:
+  - `references/fast-mode.md`
   - `references/full-project-generation.md`
   - `references/layui-vue-admin-source-map.md`
+  - `assets/examples/admin/project/minimal-admin-skeleton.md`
 - backend shell or IA:
   - `assets/examples/admin/layout/basic-layout-shell.vue`
   - `assets/examples/admin/router/admin-route-map.ts`
@@ -146,6 +194,7 @@ Only read the full local admin project when these examples do not cover the need
 - Prefer curated examples under `assets/examples/admin/` for page structure.
 - Treat files under `assets/vendor/` as fallback raw material, not first-pass prompt content.
 - Read raw vendor docs only when the summaries or curated examples are insufficient.
+- If fast mode is active, do not expand to full component docs or raw vendor docs in the first pass.
 
 ## Templates
 

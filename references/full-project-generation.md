@@ -105,6 +105,37 @@ If the user asks for a full project:
 - place business pages into `src/views/`
 - then register routes and menus
 
+If the user also wants speed, then prefer:
+
+- `references/fast-mode.md`
+- `assets/examples/admin/project/minimal-admin-skeleton.md`
+
+## Acceleration rules
+
+When speed matters, prefer this execution order:
+
+1. create root files and the minimum `src/` tree first
+2. create `BasicLayout`, router, store, and one default home page
+3. verify the project is structurally runnable
+4. implement one representative CRUD or dashboard page
+5. reuse that pattern to fill the remaining pages
+
+Also apply these constraints:
+
+- do not scan multiple examples once a close pattern has already been found
+- do not implement optional dependencies before the core app runs
+- do not spend the first pass polishing styles that are not needed for structural review
+- do not batch the entire project into one opaque generation step if smaller milestones can be reported and verified sooner
+
+## Progress feedback
+
+For full-project generation, send milestone updates instead of going silent.
+
+- announce when scaffold generation starts
+- announce when the admin shell is complete
+- announce when the first business page is complete
+- announce when dependency install or build verification starts
+
 ## Recommended dependency set
 
 The minimum dependency set usually includes:
