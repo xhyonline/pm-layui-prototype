@@ -29,6 +29,12 @@
 - `index.html`
 - `.gitignore`
 
+其中 `vite.config.ts` 必须满足：
+
+- 显式固定开发端口
+- 显式开启 `strictPort: true`
+- 不要依赖 Vite 自动回退到 `5174+`
+
 优先使用：
 
 - `TypeScript`

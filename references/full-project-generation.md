@@ -29,6 +29,12 @@ Generate at least these root files:
 - `index.html`
 - `.gitignore`
 
+`vite.config.ts` must also:
+
+- set an explicit dev port
+- enable `strictPort: true`
+- avoid relying on Vite fallback to `5174+`
+
 Prefer:
 
 - `TypeScript`

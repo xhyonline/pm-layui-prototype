@@ -31,6 +31,12 @@
 3. 运行 `pnpm dev`。
 4. 在现有 `views/` 下新增业务页，并在 `src/router/module/base-routes.ts` 中补路由。
 
+端口约束：
+
+- 默认开发端口固定为 `5173`
+- `vite.config.ts` 已启用 `strictPort: true`
+- 如果 `5173` 已被占用，`pnpm dev` 应直接报错，而不是自动跳到 `5174+`
+
 ## 当前包含
 
 - `BasicLayout` 后台壳层

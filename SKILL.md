@@ -71,6 +71,7 @@ Prefer:
 14. After delivering code, also tell the user how to run it:
    - if the user already has a `layui-vue-admin` or `Vue` repo, say which file to add or replace, how to register the route or menu entry, and which existing dev command to run
    - if the user wants a fast preview, default to a lightweight runnable prototype with at least `pnpm install` and `pnpm dev`
+   - when generating `vite.config.ts`, explicitly set a fixed dev port and `strictPort: true` so the preview does not silently move to another port
    - only switch to a full admin project handoff when the user explicitly asks for a full project or delivery-grade demo
    - fall back to the lightest `Vue 3 + Vite + @layui/layui-vue` preview path only when the user explicitly wants an isolated single-page preview
    - if the only context is this skill repository, explicitly say that this repository is a skill and reference pack, not a runnable prototype project by itself
@@ -105,6 +106,7 @@ In lightweight runnable prototype mode:
 - when working inside this skill repository, default to copying `assets/examples/admin/project/lightweight-admin-scaffold/` as the runnable base and then replace business content
 - do not re-derive layout, router, store, and base styles from scratch when the scaffold already matches the request
 - generate `package.json`, `vite.config.ts`, `tsconfig.json`, `index.html`, `src/main.ts`, and `src/App.vue`
+- when generating `vite.config.ts`, keep a fixed port and enable `strictPort: true`
 - generate a real `src/layouts/` directory instead of placing the shell directly in `App.vue`
 - generate `src/router/` with a `BasicLayout` plus child-route admin structure
 - generate `src/views/`, `src/styles/`, and `src/store/`
@@ -219,6 +221,7 @@ Only read the full local admin project when these examples do not cover the need
 - Treat this skill as desktop admin first, not mobile app first.
 - When the user asks for a runnable prototype, do not return only a detached page file if the user needs `pnpm dev`.
 - When the user asks for a full project, do not substitute a lightweight preview skeleton for a delivery-grade project skeleton.
+- For runnable projects, do not omit `strictPort: true` from `vite.config.ts`.
 
 ## Reference loading rules
 
