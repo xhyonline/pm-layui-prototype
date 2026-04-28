@@ -22,6 +22,17 @@ Use this file to keep the skill output stable.
 - Keep mock data local unless the user asks for API integration.
 - Keep the inner page structure compatible with the `layui-vue-admin` shell.
 
+## Full-project output rules
+
+When the user asks for a runnable project, demo system, or `pnpm dev`:
+
+- Do not return only a page file.
+- Return a complete project skeleton with root config files and a `src/` directory structure.
+- Include `src/layouts`, `src/router`, `src/views`, `src/store`, and `src/styles`.
+- Keep `App.vue` as a routing entry, not the only place where the whole shell lives.
+- Use nested routes with a layout component such as `BasicLayout`.
+- Include run instructions using `pnpm install` and `pnpm dev`.
+
 ## Prototype fidelity
 
 - Low fidelity: section blocks and component placeholders only.

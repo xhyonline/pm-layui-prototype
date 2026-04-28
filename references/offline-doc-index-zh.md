@@ -13,11 +13,12 @@
 开始处理原型任务时，按这个顺序走：
 
 1. 先读这份索引，确定应该看哪个示例、哪个组件族。
-2. 如果任务是后台/Admin 页面，再读 [layui-vue-admin-source-map.md](layui-vue-admin-source-map.md)。
-3. 再读 [layui-vue-admin-patterns.md](layui-vue-admin-patterns.md)，确认后台壳层与页面组织规则。
-4. 再读 [layui-vue-components.md](layui-vue-components.md)，确定组件族。
-5. 打开 `docs/layui-vue/2.23.3/plain/components/` 下对应的标准化组件文档。
-6. 只有当语法、参数或事件仍有歧义时，再打开 `assets/vendor/layui-vue/upstream/layui-vue-2.23.3/docs/src/document/zh-CN/components/` 下的上游原始文档。
+2. 如果用户要完整工程、可运行演示或 `pnpm dev`，先读 [full-project-generation-zh.md](full-project-generation-zh.md)。
+3. 如果任务是后台/Admin 页面，再读 [layui-vue-admin-source-map.md](layui-vue-admin-source-map.md)。
+4. 再读 [layui-vue-admin-patterns.md](layui-vue-admin-patterns.md)，确认后台壳层与页面组织规则。
+5. 再读 [layui-vue-components.md](layui-vue-components.md)，确定组件族。
+6. 打开 `docs/layui-vue/2.23.3/plain/components/` 下对应的标准化组件文档。
+7. 只有当语法、参数或事件仍有歧义时，再打开 `assets/vendor/layui-vue/upstream/layui-vue-2.23.3/docs/src/document/zh-CN/components/` 下的上游原始文档。
 
 ## 路径规则
 
@@ -34,6 +35,8 @@
 ## 后台示例索引
 
 优先读这些本地示例，不要一上来就去翻更大的源码树。
+
+如果用户要的是完整工程，这些示例只负责页面结构参考，不负责定义最终目录骨架。
 
 | 页面意图 | 示例文件 | 适用场景 |
 | --- | --- | --- |

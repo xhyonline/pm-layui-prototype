@@ -1,6 +1,6 @@
 ---
 name: pm-layui-prototype
-description: Use this skill when the user wants product-manager style wireframes, page prototypes, PRD-to-page drafts, admin screens, CRUD lists, dashboards, forms, approval flows, or interaction structures that must stay within the `layui-vue 2.23.3` and `layui-vue-admin` stack. This skill is especially for desktop admin backends and should preserve the `layui-vue-admin` shell, navigation, and page composition patterns instead of introducing other UI libraries or unrelated design systems.
+description: Use this skill when the user wants product-manager style wireframes, page prototypes, PRD-to-page drafts, admin screens, CRUD lists, dashboards, forms, approval flows, or interaction structures that must stay within the `layui-vue 2.23.3` and `layui-vue-admin` stack. This skill is especially for desktop admin backends; when the user asks for a full project, runnable demo, or `pnpm dev`, it must generate a full admin project instead of a single-page demo.
 ---
 
 # PM Layui Prototype
@@ -26,6 +26,7 @@ Prefer:
 - `Vue SFC` prototype code when code is requested
 - frontend mock data for demos and review
 - runnable handoff notes when code is requested
+- a full admin project scaffold when the user explicitly asks for a runnable project
 
 ## Workflow
 
@@ -34,15 +35,16 @@ Prefer:
    - user role
    - primary task
    - data objects
-   - whether the user needs a full backend page or only one business module
+   - whether the user needs a full backend project, a backend page, or only one business module
 2. Read [references/stack-rules.md](references/stack-rules.md).
 3. Read [references/version-matrix.md](references/version-matrix.md).
 4. Read [references/offline-doc-index.md](references/offline-doc-index.md).
 5. Read [docs/layui-vue/2.23.3/plain/README.md](docs/layui-vue/2.23.3/plain/README.md).
-6. If the task is for an admin backend, read these before writing code:
+6. If the user asks for a full project, runnable demo, or explicitly mentions `pnpm dev`, read [references/full-project-generation.md](references/full-project-generation.md) first.
+7. If the task is for an admin backend, read these before writing code:
    - [references/layui-vue-admin-patterns.md](references/layui-vue-admin-patterns.md)
    - [references/layui-vue-admin-source-map.md](references/layui-vue-admin-source-map.md)
-7. Read only the examples and docs needed for the page type:
+8. Read only the examples and docs needed for the page type:
    - curated admin examples under `assets/examples/admin/`
    - normalized component docs under `docs/layui-vue/2.23.3/plain/components/*.md`
    - normalized guide docs under `docs/layui-vue/2.23.3/plain/guide/*.md`
@@ -52,21 +54,42 @@ Prefer:
    - component summary: [references/layui-vue-components.md](references/layui-vue-components.md)
    - doc syntax notes: [references/layui-vue-doc-syntax.md](references/layui-vue-doc-syntax.md)
    - output format: [references/prototype-output-spec.md](references/prototype-output-spec.md)
-8. Map each visible block to an allowed `layui-vue` component or a simple native HTML structure.
-9. If the requested pattern does not exist in the allowed stack, say so and propose the nearest `Layui`-compatible fallback.
-10. Keep the implementation prototype-friendly:
+9. Map each visible block to an allowed `layui-vue` component or a simple native HTML structure.
+10. If the requested pattern does not exist in the allowed stack, say so and propose the nearest `Layui`-compatible fallback.
+11. Keep the implementation prototype-friendly:
    - simple
    - readable
    - easy for PM review
    - close to `layui-vue-admin` structure
-11. When drawing a prototype, create the display data directly in the frontend:
+12. When drawing a prototype, create the display data directly in the frontend:
    - use local mock arrays, objects, and status fields
    - do not depend on backend interfaces before the page can be rendered
    - make the prototype reviewable even if no server exists yet
-12. After delivering prototype code, also tell the user how to run it:
+13. After delivering code, also tell the user how to run it:
    - if the user already has a `layui-vue-admin` or `Vue` repo, say which file to add or replace, how to register the route or menu entry, and which existing dev command to run
-   - if no runnable repo is provided, give the lightest `Vue 3 + Vite + @layui/layui-vue` preview path, including dependency install, `main.ts` registration, where to place the page, and how to start local preview
+   - if the user asks for a full project or runnable demo, default to a full admin project handoff with at least `pnpm install` and `pnpm dev`
+   - fall back to the lightest `Vue 3 + Vite + @layui/layui-vue` preview path only when the user explicitly wants a single-page preview instead of a full project
    - if the only context is this skill repository, explicitly say that this repository is a skill and reference pack, not a runnable prototype project by itself
+
+## Full-project mode
+
+Enter “full-project mode” by default when the user:
+
+- asks for a full project, full backend, or demo system
+- explicitly requires `pnpm dev`
+- needs a runnable handoff rather than just a page prototype
+
+In full-project mode:
+
+- generate `package.json`, `vite.config.ts`, `tsconfig.json`, `index.html`, `src/main.ts`, and `src/App.vue`
+- generate a real `src/layouts/` directory instead of placing the shell directly in `App.vue`
+- generate `src/router/` with a `BasicLayout` plus child-route admin structure
+- generate `src/views/`, `src/styles/`, and `src/store/`
+- prefer `TypeScript`
+- keep `pnpm install`, `pnpm dev`, and `pnpm build` as the default script contract
+- keep demo data local in the frontend, optionally via local mock files or `mockjs`
+- do not omit menu, breadcrumb, tab bar, and global content shell pieces unless the user explicitly wants an ultra-minimal app
+- do not collapse the output into a bare `App.vue + router + views` demo
 
 ## Admin-specific defaults
 
@@ -79,6 +102,7 @@ When the user asks for a management backend and does not specify otherwise:
 - assume cards as section wrappers
 - assume top search card + table region for CRUD pages
 - assume modal or drawer editing for simple create or edit flows
+- assume `layouts/router/store/styles` directories when the user needs a runnable demo
 
 If the user only asks for a business page, still keep its inner layout compatible with the admin shell.
 
@@ -86,6 +110,9 @@ If the user only asks for a business page, still keep its inner layout compatibl
 
 Read the lightest matching example first:
 
+- full project:
+  - `references/full-project-generation.md`
+  - `references/layui-vue-admin-source-map.md`
 - backend shell or IA:
   - `assets/examples/admin/layout/basic-layout-shell.vue`
   - `assets/examples/admin/router/admin-route-map.ts`
@@ -109,6 +136,7 @@ Only read the full local admin project when these examples do not cover the need
 - Prefer cards, forms, tables, tabs, drawers, dialogs, tags, and switches over custom widgets.
 - When producing prototype code, keep data local in the frontend unless the user explicitly asks for API integration.
 - Treat this skill as desktop admin first, not mobile app first.
+- When the user asks for a full project, do not substitute a single-file shell example for a real project skeleton.
 
 ## Reference loading rules
 

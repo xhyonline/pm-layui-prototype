@@ -13,11 +13,12 @@ Use this file as the single entry point for local `layui-vue` and `layui-vue-adm
 When starting a prototype task, use this order:
 
 1. Read this file to choose the right example and component family.
-2. Read [layui-vue-admin-source-map.md](layui-vue-admin-source-map.md) if the task is a backend/admin page.
-3. Read [layui-vue-admin-patterns.md](layui-vue-admin-patterns.md) for shell and page composition rules.
-4. Read [layui-vue-components.md](layui-vue-components.md) for component-family guidance.
-5. Open the exact normalized component docs in `docs/layui-vue/2.23.3/plain/components/`.
-6. Only if syntax still seems ambiguous, open the raw upstream docs in `assets/vendor/layui-vue/upstream/layui-vue-2.23.3/docs/src/document/zh-CN/components/`.
+2. If the user wants a full project, runnable demo, or `pnpm dev`, read [full-project-generation.md](full-project-generation.md) first.
+3. Read [layui-vue-admin-source-map.md](layui-vue-admin-source-map.md) if the task is a backend/admin page.
+4. Read [layui-vue-admin-patterns.md](layui-vue-admin-patterns.md) for shell and page composition rules.
+5. Read [layui-vue-components.md](layui-vue-components.md) for component-family guidance.
+6. Open the exact normalized component docs in `docs/layui-vue/2.23.3/plain/components/`.
+7. Only if syntax still seems ambiguous, open the raw upstream docs in `assets/vendor/layui-vue/upstream/layui-vue-2.23.3/docs/src/document/zh-CN/components/`.
 
 ## Path rules
 
@@ -34,6 +35,8 @@ For any guide named `xyz`:
 ## Admin example index
 
 Use these local examples before reading larger source trees.
+
+If the user wants a full project, these examples only define page patterns, not the final project scaffold.
 
 | Page intent | Example file | Use for |
 | --- | --- | --- |
