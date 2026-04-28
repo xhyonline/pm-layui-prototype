@@ -1,0 +1,8 @@
+interface:
+  display_name: "PM Layui Prototype"
+  short_description: "PM backend prototypes with layui-vue-admin patterns"
+  brand_color: "#16BAAA"
+  default_prompt: "Use $pm-layui-prototype to design a desktop admin prototype with layui-vue 2.23.3, layui-vue-admin shell patterns, and GoFrame-friendly API placeholders."
+
+policy:
+  allow_implicit_invocation: true
