@@ -1,20 +1,22 @@
 # pm-layui-prototype
 
-一个面向 `layui-vue 2.23.3` + `layui-vue-admin` 的后台原型技能。
+一个面向 `layui-vue 2.23.3` 的原型技能。
 
 它适合这些场景：
 
 - 产品经理线框图
 - 后台管理页面原型
+- 非后台桌面 Web 页面原型
 - CRUD 列表页
 - Dashboard / 工作台
 - 表单页
 - 审批流页面
 - PRD 转页面草稿
 
-技能默认以桌面端后台为目标，强调：
+技能默认以桌面端原型为目标，其中后台场景优先使用 `layui-vue-admin`，非后台场景优先使用普通 `layui-vue` 页面组合。它强调：
 
-- 保持 `layui-vue-admin` 壳层风格
+- 后台场景保持 `layui-vue-admin` 壳层风格
+- 非后台场景不强行套后台导航壳层
 - 优先使用 `layui-vue` 兼容组件
 - 画原型时前端本地构造 mock 数据
 - 不把后端接口作为页面渲染前置依赖
@@ -115,6 +117,8 @@ git clone https://github.com/xhyonline/pm-layui-prototype.git `
 - `根据这份 PRD 出一个后台审批流页面草稿`
 - `给我做一个 layui-vue 的 dashboard 工作台原型`
 - `做一个带搜索区、表格区、弹窗编辑的 CRUD 页面`
+- `做一个基于 layui-vue 的活动详情页原型，不要后台侧边栏`
+- `给我一个普通门户首页草图，要求保持 layui-vue 组件体系`
 
 如果触发成功，Codex 会优先按这份 skill 的约束来组织页面结构、组件选型和 mock 数据。
 
