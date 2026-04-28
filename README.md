@@ -23,6 +23,7 @@
 - 当用户要求完整演示工程时，优先生成可 `pnpm dev` 的完整后台项目骨架
 - 当用户强调速度时，优先走快速模式与最小工程骨架，而不是首轮展开大量参考资料
 - 当用户要求 `pnpm dev` 且追求速度时，优先复用 `assets/examples/admin/project/lightweight-admin-scaffold/`，而不是从空目录重搭壳层
+- 当用户要求 `pnpm dev` 且目标不是后台时，优先复用 `assets/examples/non-admin/project/lightweight-web-scaffold/`
 - 长任务期间定期反馈当前进度，避免终端长时间无响应感
 - 完整工程优先按“骨架 -> 壳层 -> 代表页 -> 剩余页面”的顺序生成，以缩短首个可运行结果时间
 
@@ -35,6 +36,11 @@
 - `references/`
 - `docs/`
 - `assets/`
+
+其中可直接复制的轻量骨架当前有两套：
+
+- 后台：`assets/examples/admin/project/lightweight-admin-scaffold/`
+- 非后台：`assets/examples/non-admin/project/lightweight-web-scaffold/`
 
 这意味着你把仓库推送到 GitHub 后，可以直接按“整个仓库就是一个 skill”的方式安装。
 

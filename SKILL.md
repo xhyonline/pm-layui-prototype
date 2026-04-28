@@ -66,6 +66,7 @@ Prefer:
    - whether the target is admin/backend or non-admin
    - whether the user needs a lightweight runnable prototype, a full backend project, a backend page, or only one business module
    - for admin/backend mode, whether the current task should start from `assets/examples/admin/project/lightweight-admin-scaffold/` as the default runnable base
+   - for non-admin mode, whether the current task should start from `assets/examples/non-admin/project/lightweight-web-scaffold/` as the default runnable base
 2. Choose the branch first:
    - admin/backend mode: use `layui-vue-admin` patterns, admin shell, and admin examples
    - non-admin mode: use plain `layui-vue` page composition, and do not apply admin shell by default
@@ -150,6 +151,7 @@ In lightweight runnable prototype mode:
     - generate `src/views/`, `src/styles/`, and `src/store/`
     - include only the minimum admin shell needed for preview: menu, header, content area, and the routes needed by the prototype
   - non-admin runnable path:
+    - when working inside this skill repository, default to copying `assets/examples/non-admin/project/lightweight-web-scaffold/` as the runnable base and then replace business content
     - do not copy the admin scaffold by default
     - prefer the lightest runnable `Vue 3 + Vite + @layui/layui-vue` structure
     - do not generate `BasicLayout` unless the user explicitly wants a shell-like structure
@@ -255,6 +257,8 @@ Read the lightest matching example first:
   - `assets/examples/admin/project/minimal-admin-skeleton.md`
 - non-admin lightweight runnable prototype:
   - `references/fast-mode.md`
+  - `assets/examples/non-admin/project/lightweight-web-scaffold/`
+  - `assets/examples/non-admin/project/lightweight-web-scaffold/README.md`
   - `assets/templates/dashboard.vue`
   - `assets/templates/crud-page.vue`
   - `assets/templates/form-dialog.vue`
@@ -262,6 +266,8 @@ Read the lightest matching example first:
 - non-admin fuller runnable project:
   - `references/fast-mode.md`
   - `references/full-project-generation.md`
+  - `assets/examples/non-admin/project/lightweight-web-scaffold/`
+  - `assets/examples/non-admin/project/lightweight-web-scaffold/README.md`
   - `assets/templates/dashboard.vue`
   - `assets/templates/crud-page.vue`
   - `assets/templates/form-dialog.vue`
