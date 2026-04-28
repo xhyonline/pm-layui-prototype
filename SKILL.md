@@ -37,6 +37,7 @@ Prefer:
    - primary task
    - data objects
    - whether the user needs a lightweight runnable prototype, a full backend project, a backend page, or only one business module
+   - whether the current task should start from `assets/examples/admin/project/lightweight-admin-scaffold/` as the default runnable base
 2. Read [references/stack-rules.md](references/stack-rules.md).
 3. Read [references/version-matrix.md](references/version-matrix.md).
 4. Read [references/offline-doc-index.md](references/offline-doc-index.md).
@@ -101,6 +102,8 @@ Enter “lightweight runnable prototype mode” by default when the user:
 
 In lightweight runnable prototype mode:
 
+- when working inside this skill repository, default to copying `assets/examples/admin/project/lightweight-admin-scaffold/` as the runnable base and then replace business content
+- do not re-derive layout, router, store, and base styles from scratch when the scaffold already matches the request
 - generate `package.json`, `vite.config.ts`, `tsconfig.json`, `index.html`, `src/main.ts`, and `src/App.vue`
 - generate a real `src/layouts/` directory instead of placing the shell directly in `App.vue`
 - generate `src/router/` with a `BasicLayout` plus child-route admin structure
@@ -180,6 +183,7 @@ Read the lightest matching example first:
 
 - lightweight runnable prototype:
   - `references/fast-mode.md`
+  - `assets/examples/admin/project/lightweight-admin-scaffold/`
   - `assets/examples/admin/project/lightweight-admin-scaffold/README.md`
   - `assets/examples/admin/project/minimal-admin-skeleton.md`
   - one closest page example
@@ -187,6 +191,7 @@ Read the lightest matching example first:
   - `references/fast-mode.md`
   - `references/full-project-generation.md`
   - `references/layui-vue-admin-source-map.md`
+  - `assets/examples/admin/project/lightweight-admin-scaffold/`
   - `assets/examples/admin/project/lightweight-admin-scaffold/README.md`
   - `assets/examples/admin/project/minimal-admin-skeleton.md`
 - backend shell or IA:
